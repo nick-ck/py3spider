@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-
+basedir = os.path.abspath(os.path.dirname(__file__))
 class Mzitu():
     def __init__(self):
         self.headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0"}
@@ -49,11 +49,11 @@ class Mzitu():
 
     def mkdir(self, path):
         path = path.strip()
-        isExists = os.path.exists(os.path.join("d:\mzitu", path))
+        isExists = os.path.exists(os.path.join(basedir, path))
         if not isExists:
             print(r'创建了一个名字叫做' + path + u'文件夹')
-            os.makedirs(os.path.join("d:\mzitu", path))
-            os.chdir(os.path.join("d:\mzitu", path))
+            os.makedirs(os.path.join(basedir, path))
+            os.chdir(os.path.join(basedir, path))
             return True
         else:
             print(u'名字叫做', path, u'的文件夹已经存在了！')
