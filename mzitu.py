@@ -62,4 +62,4 @@ class Mzitu():
 #TODO:add subprocess thread
 
 mzitu = Mzitu()
-mzitu.all_url('http://www.mzitu.com')
+mzitu.all_url('http://www.mzitu.com/all')
